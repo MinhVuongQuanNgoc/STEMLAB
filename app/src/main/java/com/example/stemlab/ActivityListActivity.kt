@@ -18,6 +18,13 @@ class ActivityListActivity : AppCompatActivity() {
         setupButton(R.id.btnPerformance, "Human Performance Lab")
         setupButton(R.id.btnReaction, "Reaction Board Challenge")
         setupButton(R.id.btnBreathing, "Breathing Pace Trainer")
+
+        val btnLeaderboard = findViewById<Button>(R.id.btnLeaderboard)
+
+        btnLeaderboard.setOnClickListener {
+            val intent = Intent(this, LeaderboardActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupButton(buttonId: Int, activityName: String) {

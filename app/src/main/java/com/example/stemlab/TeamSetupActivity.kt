@@ -36,6 +36,7 @@ class TeamSetupActivity : AppCompatActivity() {
             val teamCode = "TEAM-${Random.nextInt(1000, 9999)}"
 
             tvTeamCode.text = """
+                
                 Team Created Successfully!
                 
                 Team: $teamName
@@ -43,6 +44,12 @@ class TeamSetupActivity : AppCompatActivity() {
                 Grade: $gradeLevel
                 Team Code: $teamCode
             """.trimIndent()
+
+            val teamPreferences = getSharedPreferences("STEMM_TEAM", MODE_PRIVATE)
+            teamPreferences.edit()
+                .putString("teamName", teamName)
+                .apply()
+
             val intent = Intent(this, ActivityListActivity::class.java)
             startActivity(intent)
         }

@@ -74,6 +74,12 @@
             android:text="Breathing Pace Trainer"
             android:layout_marginTop="12dp" />
 
+        <Button
+            android:id="@+id/btnLeaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Leaderboard"
+            android:layout_marginTop="24dp" />
     </LinearLayout>
 
 </ScrollView>

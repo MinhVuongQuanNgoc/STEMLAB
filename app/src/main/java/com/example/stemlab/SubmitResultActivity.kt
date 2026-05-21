@@ -56,6 +56,25 @@ class SubmitResultActivity : AppCompatActivity() {
                 .putString("history", oldHistory + newRecord)
                 .apply()
 
+            val teamPreferences = getSharedPreferences("STEMM_TEAM", MODE_PRIVATE)
+            val teamName = teamPreferences.getString("teamName", "Unknown Team") ?: "Unknown Team"
+
+            val score = rating * 20
+
+            val leaderboardRecord = """
+                Team: $teamName
+                Challenge: $challengeTitle
+                Score: $score
+                Rating: $rating / 5
+    ------------------------------
+            """.trimIndent()
+
+            val oldLeaderboard = sharedPreferences.getString("leaderboard", "") ?: ""
+
+            sharedPreferences.edit()
+                .putString("leaderboard", oldLeaderboard + leaderboardRecord)
+                .apply()
+
             tvSubmittedResult.text = """
                 Result Submitted Successfully!
                 
