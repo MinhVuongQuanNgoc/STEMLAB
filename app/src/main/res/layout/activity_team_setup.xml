@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Your Team"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/etTeamName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Team Name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etMemberOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Member 1 First Name"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etMemberTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Member 2 First Name"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etGradeLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Grade / Year Level"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnCreateTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Team"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tvTeamCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>

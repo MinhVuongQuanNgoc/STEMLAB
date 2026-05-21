@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STEMM Activities"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose a real-world STEMM challenge to begin."
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnParachute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parachute Drop Challenge" />
+
+        <Button
+            android:id="@+id/btnSound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sound Pollution Hunter"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnFan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hand Fan Challenge"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnEarthquake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Earthquake-Resistant Structure"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnPerformance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Human Performance Lab"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnReaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reaction Board Challenge"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnBreathing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Breathing Pace Trainer"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>
