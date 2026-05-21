@@ -43,6 +43,8 @@ class TeamSetupActivity : AppCompatActivity() {
                 Grade: $gradeLevel
                 Team Code: $teamCode
             """.trimIndent()
+            val intent = Intent(this, ActivityListActivity::class.java)
+            startActivity(intent)
         }
     }
 }

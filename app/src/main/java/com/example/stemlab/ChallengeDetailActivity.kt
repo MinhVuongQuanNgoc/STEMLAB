@@ -1,9 +1,9 @@
 package com.example.stemlab
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ChallengeDetailActivity : AppCompatActivity() {
@@ -71,7 +71,9 @@ class ChallengeDetailActivity : AppCompatActivity() {
         }
 
         btnStartChallenge.setOnClickListener {
-            Toast.makeText(this, "Result submission page will be added next.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SubmitResultActivity::class.java)
+            intent.putExtra("challengeTitle", title)
+            startActivity(intent)
         }
     }
 }

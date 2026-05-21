@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSubmitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Result"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/etPrediction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prediction"
+            android:inputType="textMultiLine"
+            android:minLines="2" />
+
+        <EditText
+            android:id="@+id/etResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Result / Measurement"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etReflection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Reflection / What did you learn?"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:layout_marginTop="12dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnSubmitResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Result"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tvSubmittedResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

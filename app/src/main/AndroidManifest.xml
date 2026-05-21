@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STEMLAB">
         <activity
+            android:name=".SubmitResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChallengeDetailActivity"
             android:exported="false" />
         <activity
