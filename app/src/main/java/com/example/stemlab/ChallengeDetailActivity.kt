@@ -19,6 +19,7 @@ class ChallengeDetailActivity : AppCompatActivity() {
         val tvOverview = findViewById<TextView>(R.id.tvChallengeOverview)
         val tvInstructions = findViewById<TextView>(R.id.tvChallengeInstructions)
         val btnStartChallenge = findViewById<Button>(R.id.btnStartChallenge)
+        val btnOpenSensor = findViewById<Button>(R.id.btnOpenSensor)
 
         tvTitle.text = title
 
@@ -72,6 +73,12 @@ class ChallengeDetailActivity : AppCompatActivity() {
 
         btnStartChallenge.setOnClickListener {
             val intent = Intent(this, SubmitResultActivity::class.java)
+            intent.putExtra("challengeTitle", title)
+            startActivity(intent)
+        }
+
+        btnOpenSensor.setOnClickListener {
+            val intent = Intent(this, SensorActivity::class.java)
             intent.putExtra("challengeTitle", title)
             startActivity(intent)
         }

@@ -53,6 +53,13 @@
             android:layout_height="wrap_content"
             android:text="Start Challenge" />
 
+        <Button
+            android:id="@+id/btnOpenSensor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Sensor Tool"
+            android:layout_marginTop="12dp" />
+
     </LinearLayout>
 
 </ScrollView>
