@@ -1,5 +1,6 @@
 package com.example.stemlab
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -22,6 +23,7 @@ class SubmitResultActivity : AppCompatActivity() {
         val etReflection = findViewById<EditText>(R.id.etReflection)
         val ratingBar = findViewById<RatingBar>(R.id.ratingBar)
         val btnSubmitResult = findViewById<Button>(R.id.btnSubmitResult)
+        val btnViewHistory = findViewById<Button>(R.id.btnViewHistory)
         val tvSubmittedResult = findViewById<TextView>(R.id.tvSubmittedResult)
 
         tvSubmitTitle.text = "Submit Result: $challengeTitle"
@@ -37,6 +39,23 @@ class SubmitResultActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val newRecord = """
+                Challenge: $challengeTitle
+                Prediction: $prediction
+                Result: $result
+                Reflection: $reflection
+                Rating: $rating / 5
+                ------------------------------
+                
+            """.trimIndent()
+
+            val sharedPreferences = getSharedPreferences("STEMM_RESULTS", MODE_PRIVATE)
+            val oldHistory = sharedPreferences.getString("history", "") ?: ""
+
+            sharedPreferences.edit()
+                .putString("history", oldHistory + newRecord)
+                .apply()
+
             tvSubmittedResult.text = """
                 Result Submitted Successfully!
                 
@@ -46,6 +65,13 @@ class SubmitResultActivity : AppCompatActivity() {
                 Reflection: $reflection
                 Rating: $rating / 5
             """.trimIndent()
+
+            Toast.makeText(this, "Result saved to history.", Toast.LENGTH_SHORT).show()
+        }
+
+        btnViewHistory.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
         }
     }
 }
