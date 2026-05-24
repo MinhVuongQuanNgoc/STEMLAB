@@ -1,5 +1,6 @@
 package com.example.stemlab
 
+import com.example.stemlab.utils.ScoreCalculator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import android.content.Intent
@@ -62,7 +63,7 @@ class SubmitResultActivity : AppCompatActivity() {
             val teamPreferences = getSharedPreferences("STEMM_TEAM", MODE_PRIVATE)
             val teamName = teamPreferences.getString("teamName", "Unknown Team") ?: "Unknown Team"
 
-            val score = rating * 20
+            val score = ScoreCalculator.calculateScore(rating)
 
             val leaderboardRecord = """
                 Team: $teamName
