@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val btnStart = findViewById<Button>(R.id.btnStart)
 
         btnStart.setOnClickListener {
-            val intent = Intent(this, TeamSetupActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }
