@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "28580846556",
+    "project_id": "stemm-lab-d7621",
+    "storage_bucket": "stemm-lab-d7621.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28580846556:android:3fde1d5847bb958b41cd19",
+        "android_client_info": {
+          "package_name": "com.example.stemlab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWoUboT9x0nEzhx-ShMWeGSHXCKWM8ETg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
