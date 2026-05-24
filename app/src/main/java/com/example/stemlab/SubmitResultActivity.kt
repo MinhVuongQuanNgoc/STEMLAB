@@ -1,5 +1,7 @@
 package com.example.stemlab
 
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -14,7 +16,8 @@ class SubmitResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_submit_result)
-
+        val firestore = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
         val challengeTitle = intent.getStringExtra("challengeTitle") ?: "STEMM Challenge"
 
         val tvSubmitTitle = findViewById<TextView>(R.id.tvSubmitTitle)
@@ -84,6 +87,27 @@ class SubmitResultActivity : AppCompatActivity() {
                 Reflection: $reflection
                 Rating: $rating / 5
             """.trimIndent()
+
+            val resultData = hashMapOf(
+                "userId" to (auth.currentUser?.uid ?: "unknown"),
+                "teamName" to teamName,
+                "challengeTitle" to challengeTitle,
+                "prediction" to prediction,
+                "result" to result,
+                "reflection" to reflection,
+                "rating" to rating,
+                "score" to score,
+                "timestamp" to System.currentTimeMillis()
+            )
+
+            firestore.collection("results")
+                .add(resultData)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Result saved to Firestore.", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Firestore save failed: ${exception.message}", Toast.LENGTH_LONG).show()
+                }
 
             Toast.makeText(this, "Result saved to history.", Toast.LENGTH_SHORT).show()
         }
