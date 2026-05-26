@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSoundTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sound Pollution Hunter"
+            android:textColor="#1B5E20"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvSoundInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use this tool to compare classroom sound levels. The dB value is an estimated relative reading, not a professional calibrated measurement."
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:id="@+id/tvSoundLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estimated Sound Level: 0 dB"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvSoundCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category: Not measured"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnStartSoundMeter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Measuring" />
+
+        <Button
+            android:id="@+id/btnStopSoundMeter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stop Measuring"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnBackFromSoundMeter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

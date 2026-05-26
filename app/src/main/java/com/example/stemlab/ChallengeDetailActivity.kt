@@ -78,7 +78,12 @@ class ChallengeDetailActivity : AppCompatActivity() {
         }
 
         btnOpenSensor.setOnClickListener {
-            val intent = Intent(this, SensorActivity::class.java)
+            val intent = if (title == "Sound Pollution Hunter") {
+                Intent(this, SoundMeterActivity::class.java)
+            } else {
+                Intent(this, SensorActivity::class.java)
+            }
+
             intent.putExtra("challengeTitle", title)
             startActivity(intent)
         }
