@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STEMLAB">
         <activity
+            android:name=".EarthquakeActivity"
+            android:exported="false" />
+        <activity
             android:name=".HandFanActivity"
             android:exported="false" />
         <activity
@@ -30,9 +33,6 @@
             android:exported="false" />
         <activity
             android:name=".SoundMeterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HandFanActivity"
             android:exported="false" />
         <activity
             android:name=".SensorActivity"

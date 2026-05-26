@@ -57,6 +57,18 @@ class ChallengeDetailActivity : AppCompatActivity() {
         5. Use the Hand Fan tool to estimate relative force.
     """.trimIndent()
             }
+            "Earthquake-Resistant Structure" -> {
+                tvCategory.text = "Engineering + Earth Science"
+                tvOverview.text = "Design a structure that can reduce vibration and protect a phone during a simulated earthquake."
+                tvInstructions.text = """
+        1. Build an anti-vibration layer using paper, cardboard, cups, or tape.
+        2. Place a flat cardboard platform on top.
+        3. Put the phone in the centre of the platform.
+        4. Start the vibration test in the app.
+        5. Gently shake the structure and observe the peak movement.
+        6. Modify the design to reduce movement.
+    """.trimIndent()
+            }
 
             "Reaction Board Challenge" -> {
                 tvCategory.text = "Neuroscience + Mathematics"
@@ -96,6 +108,10 @@ class ChallengeDetailActivity : AppCompatActivity() {
 
                 "Hand Fan Challenge" -> {
                     Intent(this, HandFanActivity::class.java)
+                }
+
+                "Earthquake-Resistant Structure" -> {
+                    Intent(this, EarthquakeActivity::class.java)
                 }
 
                 else -> {
