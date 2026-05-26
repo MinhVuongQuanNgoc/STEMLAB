@@ -46,6 +46,17 @@ class ChallengeDetailActivity : AppCompatActivity() {
                     4. Reflect on possible health effects of loud noise.
                 """.trimIndent()
             }
+            "Hand Fan Challenge" -> {
+                tvCategory.text = "Physics - Air Movement"
+                tvOverview.text = "Test how air movement affects flexible materials such as paper and cardboard."
+                tvInstructions.text = """
+        1. Stand paper or cardboard upright on a table.
+        2. Fan air from a fixed distance such as 15 cm, 30 cm, or 45 cm.
+        3. Observe and record the bend angle.
+        4. Repeat with different fan designs and materials.
+        5. Use the Hand Fan tool to estimate relative force.
+    """.trimIndent()
+            }
 
             "Reaction Board Challenge" -> {
                 tvCategory.text = "Neuroscience + Mathematics"
@@ -78,10 +89,18 @@ class ChallengeDetailActivity : AppCompatActivity() {
         }
 
         btnOpenSensor.setOnClickListener {
-            val intent = if (title == "Sound Pollution Hunter") {
-                Intent(this, SoundMeterActivity::class.java)
-            } else {
-                Intent(this, SensorActivity::class.java)
+            val intent = when (title) {
+                "Sound Pollution Hunter" -> {
+                    Intent(this, SoundMeterActivity::class.java)
+                }
+
+                "Hand Fan Challenge" -> {
+                    Intent(this, HandFanActivity::class.java)
+                }
+
+                else -> {
+                    Intent(this, SensorActivity::class.java)
+                }
             }
 
             intent.putExtra("challengeTitle", title)

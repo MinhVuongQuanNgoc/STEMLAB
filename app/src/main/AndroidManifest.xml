@@ -3,10 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
@@ -18,58 +16,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.STEMLAB">
-
+        <activity
+            android:name=".HandFanActivity"
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".LeaderboardActivity"
             android:exported="false" />
-
         <activity
             android:name=".SoundMeterActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".HandFanActivity"
+            android:exported="false" />
         <activity
             android:name=".SensorActivity"
             android:exported="false" />
-
         <activity
             android:name=".HistoryActivity"
             android:exported="false" />
-
         <activity
             android:name=".SubmitResultActivity"
             android:exported="false" />
-
         <activity
             android:name=".ChallengeDetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".ActivityListActivity"
             android:exported="false" />
-
         <activity
             android:name=".TeamSetupActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
     </application>
 
 </manifest>
