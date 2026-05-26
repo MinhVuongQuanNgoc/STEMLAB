@@ -69,7 +69,17 @@ class ChallengeDetailActivity : AppCompatActivity() {
         6. Modify the design to reduce movement.
     """.trimIndent()
             }
-
+            "Human Performance Lab" -> {
+                tvCategory.text = "Medical Science + Biomechanics"
+                tvOverview.text = "Measure movement speed, smoothness, and coordination during controlled stretching activities."
+                tvInstructions.text = """
+        1. Hold the phone firmly in one hand.
+        2. Start the movement test in the app.
+        3. Perform a controlled stretch or movement.
+        4. Repeat with different speeds or movement styles.
+        5. Compare peak movement and smoothness ratings.
+    """.trimIndent()
+            }
             "Reaction Board Challenge" -> {
                 tvCategory.text = "Neuroscience + Mathematics"
                 tvOverview.text = "Measure reaction time and compare performance between dominant and non-dominant hands."
@@ -112,6 +122,10 @@ class ChallengeDetailActivity : AppCompatActivity() {
 
                 "Earthquake-Resistant Structure" -> {
                     Intent(this, EarthquakeActivity::class.java)
+                }
+
+                "Human Performance Lab" -> {
+                    Intent(this, HumanPerformanceActivity::class.java)
                 }
 
                 else -> {

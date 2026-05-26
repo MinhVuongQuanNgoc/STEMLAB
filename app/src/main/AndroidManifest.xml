@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.STEMLAB">
         <activity
+            android:name=".HumanPerformanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".EarthquakeActivity"
             android:exported="false" />
         <activity
