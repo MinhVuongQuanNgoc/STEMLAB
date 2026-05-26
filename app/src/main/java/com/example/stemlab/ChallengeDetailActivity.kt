@@ -82,15 +82,15 @@ class ChallengeDetailActivity : AppCompatActivity() {
             }
             "Reaction Board Challenge" -> {
                 tvCategory.text = "Neuroscience + Mathematics"
-                tvOverview.text = "Measure reaction time and compare performance between dominant and non-dominant hands."
+                tvOverview.text = "Measure reaction time, coordination, and improvement through repeated digital tap challenges."
                 tvInstructions.text = """
-                    1. Tap the screen when the button appears.
-                    2. Record reaction time.
-                    3. Repeat with the other hand.
-                    4. Compare results and improvement.
-                """.trimIndent()
+        1. Press Start Round in the Reaction Board tool.
+        2. Wait until the target changes to TAP NOW.
+        3. Tap the target as quickly as possible.
+        4. Repeat with dominant and non-dominant hands.
+        5. Compare best time, average time, and reaction rating.
+    """.trimIndent()
             }
-
             else -> {
                 tvCategory.text = "STEMM Activity"
                 tvOverview.text = "Complete this real-world STEMM challenge and record your prediction, result, and reflection."
@@ -126,6 +126,10 @@ class ChallengeDetailActivity : AppCompatActivity() {
 
                 "Human Performance Lab" -> {
                     Intent(this, HumanPerformanceActivity::class.java)
+                }
+
+                "Reaction Board Challenge" -> {
+                    Intent(this, ReactionBoardActivity::class.java)
                 }
 
                 else -> {
