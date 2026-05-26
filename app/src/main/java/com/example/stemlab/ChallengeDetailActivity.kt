@@ -91,6 +91,17 @@ class ChallengeDetailActivity : AppCompatActivity() {
         5. Compare best time, average time, and reaction rating.
     """.trimIndent()
             }
+            "Breathing Pace Trainer" -> {
+                tvCategory.text = "Medical Science"
+                tvOverview.text = "Analyse breathing patterns at rest and after exercise using phone movement data."
+                tvInstructions.text = """
+        1. Place the phone gently on the chest or hold it firmly near the body.
+        2. Start the breathing test in the app.
+        3. Breathe normally for a short period.
+        4. Repeat after light exercise.
+        5. Compare detected breaths and breaths per minute.
+    """.trimIndent()
+            }
             else -> {
                 tvCategory.text = "STEMM Activity"
                 tvOverview.text = "Complete this real-world STEMM challenge and record your prediction, result, and reflection."
@@ -130,6 +141,10 @@ class ChallengeDetailActivity : AppCompatActivity() {
 
                 "Reaction Board Challenge" -> {
                     Intent(this, ReactionBoardActivity::class.java)
+                }
+
+                "Breathing Pace Trainer" -> {
+                    Intent(this, BreathingActivity::class.java)
                 }
 
                 else -> {
