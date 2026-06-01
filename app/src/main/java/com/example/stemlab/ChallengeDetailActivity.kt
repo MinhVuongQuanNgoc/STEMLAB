@@ -3,6 +3,7 @@ package com.example.stemlab
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -20,8 +21,13 @@ class ChallengeDetailActivity : AppCompatActivity() {
         val tvInstructions = findViewById<TextView>(R.id.tvChallengeInstructions)
         val btnStartChallenge = findViewById<Button>(R.id.btnStartChallenge)
         val btnOpenSensor = findViewById<Button>(R.id.btnOpenSensor)
+        val btnBack = findViewById<ImageButton>(R.id.btnBack)
 
         tvTitle.text = title
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         when (title) {
             "Parachute Drop Challenge" -> {

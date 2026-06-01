@@ -47,7 +47,7 @@ class HumanPerformanceActivity : AppCompatActivity(), SensorEventListener {
         val btnStartHumanPerformance = findViewById<Button>(R.id.btnStartHumanPerformance)
         val btnStopHumanPerformance = findViewById<Button>(R.id.btnStopHumanPerformance)
         val btnResetHumanPerformance = findViewById<Button>(R.id.btnResetHumanPerformance)
-        val btnBackFromHumanPerformance = findViewById<Button>(R.id.btnBackFromHumanPerformance)
+        val btnBackFromHumanPerformance = findViewById<android.widget.ImageButton>(R.id.btnBackFromHumanPerformance)
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)

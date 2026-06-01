@@ -24,6 +24,11 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sensor)
 
+        val btnBackFromSensor = findViewById<android.widget.ImageButton>(R.id.btnBackFromSensor)
+        btnBackFromSensor.setOnClickListener {
+            finish()
+        }
+
         val challengeTitle = intent.getStringExtra("challengeTitle") ?: "STEMM Sensor Activity"
 
         val tvSensorChallenge = findViewById<TextView>(R.id.tvSensorChallenge)

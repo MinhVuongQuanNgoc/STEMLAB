@@ -43,6 +43,11 @@ class SubmitResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_submit_result)
 
+        val btnBackFromSubmit = findViewById<android.widget.ImageButton>(R.id.btnBackFromSubmit)
+        btnBackFromSubmit.setOnClickListener {
+            finish()
+        }
+
         val firestore = FirebaseFirestore.getInstance()
         val auth = FirebaseAuth.getInstance()
         val challengeTitle = intent.getStringExtra("challengeTitle") ?: "STEMM Challenge"

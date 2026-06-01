@@ -1,118 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#FFFFFF">
 
-    <LinearLayout
+    <!-- Top Navigation Bar -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="#E8F5E9"
+        android:padding="4dp">
 
-        <TextView
-            android:id="@+id/tvHandFanTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hand Fan Challenge"
-            android:textColor="#1B5E20"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+        <ImageButton
+            android:id="@+id/btnBackFromHandFan"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            app:tint="#1B5E20" />
 
-        <TextView
-            android:id="@+id/tvHandFanInstruction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Measure how air movement bends paper or cardboard. Enter the bend angle and material type to estimate the relative force."
-            android:textSize="16sp"
-            android:layout_marginBottom="20dp" />
+    </FrameLayout>
 
-        <EditText
-            android:id="@+id/etFanDesign"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Fan design / observation notes" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <EditText
-            android:id="@+id/etFanDistance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Fan distance in cm, e.g. 30"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="12dp" />
-
-        <EditText
-            android:id="@+id/etBendAngle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bend angle in degrees, e.g. 30"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Material:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
-
-        <RadioGroup
-            android:id="@+id/rgMaterial"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="8dp">
+            android:padding="24dp">
 
-            <RadioButton
-                android:id="@+id/rbThinPaper"
+            <TextView
+                android:id="@+id/tvHandFanTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thin printer paper (k = 0.05)" />
+                android:text="Hand Fan Challenge"
+                android:textColor="#1B5E20"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
 
-            <RadioButton
-                android:id="@+id/rbCardStock"
+            <TextView
+                android:id="@+id/tvHandFanInstruction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Standard card stock (k = 0.2)" />
+                android:text="Measure how air movement bends paper or cardboard. Enter the bend angle and material type to estimate the relative force."
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp" />
 
-            <RadioButton
-                android:id="@+id/rbThinCardboard"
+            <EditText
+                android:id="@+id/etFanDesign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thin cardboard (k = 0.5)" />
+                android:hint="Fan design / observation notes" />
 
-            <RadioButton
-                android:id="@+id/rbCorrugatedCardboard"
+            <EditText
+                android:id="@+id/etFanDistance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Corrugated cardboard (k = 2.5)" />
+                android:hint="Fan distance in cm, e.g. 30"
+                android:inputType="numberDecimal"
+                android:layout_marginTop="12dp" />
 
-        </RadioGroup>
+            <EditText
+                android:id="@+id/etBendAngle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bend angle in degrees, e.g. 30"
+                android:inputType="numberDecimal"
+                android:layout_marginTop="12dp" />
 
-        <Button
-            android:id="@+id/btnCalculateFanForce"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calculate Estimated Force"
-            android:layout_marginTop="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Material:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
 
-        <TextView
-            android:id="@+id/tvFanResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Result will appear here."
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
+            <RadioGroup
+                android:id="@+id/rgMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
 
-        <Button
-            android:id="@+id/btnBackFromHandFan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:layout_marginTop="24dp" />
+                <RadioButton
+                    android:id="@+id/rbThinPaper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thin printer paper (k = 0.05)" />
 
-    </LinearLayout>
+                <RadioButton
+                    android:id="@+id/rbCardStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Standard card stock (k = 0.2)" />
 
-</ScrollView>
+                <RadioButton
+                    android:id="@+id/rbThinCardboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thin cardboard (k = 0.5)" />
+
+                <RadioButton
+                    android:id="@+id/rbCorrugatedCardboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Corrugated cardboard (k = 2.5)" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnCalculateFanForce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate Estimated Force"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tvFanResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Result will appear here."
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

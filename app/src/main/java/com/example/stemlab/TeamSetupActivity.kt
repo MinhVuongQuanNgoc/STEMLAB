@@ -20,7 +20,12 @@ class TeamSetupActivity : AppCompatActivity() {
         val etMemberTwo = findViewById<EditText>(R.id.etMemberTwo)
         val etGradeLevel = findViewById<EditText>(R.id.etGradeLevel)
         val btnCreateTeam = findViewById<Button>(R.id.btnCreateTeam)
+        val btnBack = findViewById<Button>(R.id.btnBack)
         val tvTeamCode = findViewById<TextView>(R.id.tvTeamCode)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         btnCreateTeam.setOnClickListener {
             val teamName = etTeamName.text.toString().trim()

@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -48,7 +49,7 @@ class SoundMeterActivity : AppCompatActivity() {
 
         val btnStartSoundMeter = findViewById<Button>(R.id.btnStartSoundMeter)
         val btnStopSoundMeter = findViewById<Button>(R.id.btnStopSoundMeter)
-        val btnBackFromSoundMeter = findViewById<Button>(R.id.btnBackFromSoundMeter)
+        val btnBackFromSoundMeter = findViewById<ImageButton>(R.id.btnBackFromSoundMeter)
 
         btnStartSoundMeter.setOnClickListener {
             if (hasAudioPermission()) {
@@ -103,7 +104,7 @@ class SoundMeterActivity : AppCompatActivity() {
             }
 
             isMeasuring = true
-            Toast.makeText(this, "Sound measuring started.", Toast.LENGTH_SHORT).show()
+            ToastHelper.showCustomToast(this, "Sound measuring started.")
             handler.post(soundRunnable)
 
         } catch (exception: Exception) {
@@ -153,7 +154,7 @@ class SoundMeterActivity : AppCompatActivity() {
         mediaRecorder?.release()
         mediaRecorder = null
 
-        Toast.makeText(this, "Sound measuring stopped.", Toast.LENGTH_SHORT).show()
+        ToastHelper.showCustomToast(this, "Sound measuring stopped.")
     }
 
     override fun onRequestPermissionsResult(

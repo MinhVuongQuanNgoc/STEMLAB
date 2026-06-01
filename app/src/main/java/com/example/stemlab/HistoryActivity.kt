@@ -10,6 +10,11 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
+        val btnBackFromHistory = findViewById<android.widget.ImageButton>(R.id.btnBackFromHistory)
+        btnBackFromHistory.setOnClickListener {
+            finish()
+        }
+
         val tvHistory = findViewById<TextView>(R.id.tvHistory)
 
         val sharedPreferences = getSharedPreferences("STEMM_RESULTS", MODE_PRIVATE)

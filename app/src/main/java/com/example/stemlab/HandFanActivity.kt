@@ -3,6 +3,7 @@ package com.example.stemlab
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
@@ -20,7 +21,7 @@ class HandFanActivity : AppCompatActivity() {
         val etBendAngle = findViewById<EditText>(R.id.etBendAngle)
         val rgMaterial = findViewById<RadioGroup>(R.id.rgMaterial)
         val btnCalculateFanForce = findViewById<Button>(R.id.btnCalculateFanForce)
-        val btnBackFromHandFan = findViewById<Button>(R.id.btnBackFromHandFan)
+        val btnBackFromHandFan = findViewById<ImageButton>(R.id.btnBackFromHandFan)
         val tvFanResult = findViewById<TextView>(R.id.tvFanResult)
 
         rgMaterial.check(R.id.rbThinPaper)
@@ -31,7 +32,7 @@ class HandFanActivity : AppCompatActivity() {
             val angleText = etBendAngle.text.toString().trim()
 
             if (distanceText.isEmpty() || angleText.isEmpty()) {
-                Toast.makeText(this, "Please enter distance and bend angle.", Toast.LENGTH_SHORT).show()
+                ToastHelper.showCustomToast(this, "Please enter distance and bend angle.")
                 return@setOnClickListener
             }
 
@@ -39,7 +40,7 @@ class HandFanActivity : AppCompatActivity() {
             val angleDegrees = angleText.toDoubleOrNull()
 
             if (distance == null || angleDegrees == null) {
-                Toast.makeText(this, "Please enter valid numbers.", Toast.LENGTH_SHORT).show()
+                ToastHelper.showCustomToast(this, "Please enter valid numbers.")
                 return@setOnClickListener
             }
 

@@ -22,26 +22,31 @@ class LoginActivity : AppCompatActivity() {
         val etLoginPassword = findViewById<EditText>(R.id.etLoginPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val btnGoRegister = findViewById<Button>(R.id.btnGoRegister)
+        val btnBack = findViewById<Button>(R.id.btnBack)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
         btnLogin.setOnClickListener {
             val email = etLoginEmail.text.toString().trim()
             val password = etLoginPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password.", Toast.LENGTH_SHORT).show()
+                ToastHelper.showCustomToast(this, "Please enter email and password.")
                 return@setOnClickListener
             }
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Login successful.", Toast.LENGTH_SHORT).show()
+                    ToastHelper.showCustomToast(this, "Login successful.")
 
                     val intent = Intent(this, TeamSetupActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
                 .addOnFailureListener { exception ->
-                    Toast.makeText(this, "Login failed: ${exception.message}", Toast.LENGTH_LONG).show()
+                    ToastHelper.showCustomToast(this, "Login failed: ${exception.message}")
                 }
         }
 

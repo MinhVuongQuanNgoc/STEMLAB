@@ -1,119 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#FFFFFF">
 
-    <LinearLayout
+    <!-- Top Navigation Bar -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="#E8F5E9"
+        android:padding="4dp">
 
-        <TextView
-            android:id="@+id/tvSubmitTitle"
+        <ImageButton
+            android:id="@+id/btnBackFromSubmit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            app:tint="#1B5E20" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit Result"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#1B5E20"
-            android:layout_marginBottom="20dp" />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-        <EditText
-            android:id="@+id/etPrediction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Prediction"
-            android:inputType="textMultiLine"
-            android:minLines="2" />
+            <TextView
+                android:id="@+id/tvSubmitTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Result"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:layout_marginBottom="20dp" />
 
-        <EditText
-            android:id="@+id/etResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Result / Measurement"
-            android:inputType="textMultiLine"
-            android:minLines="2"
-            android:layout_marginTop="12dp" />
+            <EditText
+                android:id="@+id/etPrediction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Prediction"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
 
-        <EditText
-            android:id="@+id/etReflection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Reflection / What did you learn?"
-            android:inputType="textMultiLine"
-            android:minLines="3"
-            android:layout_marginTop="12dp" />
+            <EditText
+                android:id="@+id/etResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Result / Measurement"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:layout_marginTop="12dp" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="1"
-            android:layout_marginTop="16dp" />
+            <EditText
+                android:id="@+id/etReflection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Reflection / What did you learn?"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:layout_marginTop="12dp" />
 
-        <TextView
-            android:id="@+id/tvTimer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Timer: 0.0 seconds"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1"
+                android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnStartTimer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Timer"
-            android:layout_marginTop="12dp" />
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timer: 0.0 seconds"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
 
-        <Button
-            android:id="@+id/btnStopTimer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stop Timer"
-            android:layout_marginTop="8dp" />
+            <Button
+                android:id="@+id/btnStartTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Timer"
+                android:layout_marginTop="12dp" />
 
-        <Button
-            android:id="@+id/btnGetLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Get Location"
-            android:layout_marginTop="20dp" />
+            <Button
+                android:id="@+id/btnStopTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Timer"
+                android:layout_marginTop="8dp" />
 
-        <TextView
-            android:id="@+id/tvLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Location: Not recorded"
-            android:textSize="16sp"
-            android:layout_marginTop="12dp" />
+            <Button
+                android:id="@+id/btnGetLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Location"
+                android:layout_marginTop="20dp" />
 
-        <Button
-            android:id="@+id/btnSubmitResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit Result"
-            android:layout_marginTop="24dp" />
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location: Not recorded"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp" />
 
-        <TextView
-            android:id="@+id/tvSubmittedResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp" />
+            <Button
+                android:id="@+id/btnSubmitResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Result"
+                android:layout_marginTop="24dp" />
 
-        <Button
-            android:id="@+id/btnViewHistory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View History"
-            android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/tvSubmittedResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnViewHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View History"
+                android:layout_marginTop="16dp" />
 
-</ScrollView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

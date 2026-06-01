@@ -1,111 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#FFFFFF">
 
-    <LinearLayout
+    <!-- Top Navigation Bar -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="#E8F5E9"
+        android:padding="4dp">
 
-        <TextView
-            android:id="@+id/tvHumanPerformanceTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Human Performance Lab"
-            android:textColor="#1B5E20"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:id="@+id/tvHumanPerformanceInstruction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hold the phone firmly and perform a controlled stretch or movement. Lower movement change means smoother and more graceful movement."
-            android:textSize="16sp"
-            android:layout_marginBottom="20dp" />
-
-        <EditText
-            android:id="@+id/etMovementNotes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Movement notes, e.g. slow arm raise, side stretch"
-            android:inputType="textMultiLine"
-            android:minLines="2" />
-
-        <TextView
-            android:id="@+id/tvCurrentMovement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Current Movement: 0.00"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
-
-        <TextView
-            android:id="@+id/tvPeakMovement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Peak Movement: 0.00"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvSmoothness"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Smoothness: Not measured"
-            android:textSize="18sp"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvElapsedMovementTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Elapsed Time: 0.0 seconds"
-            android:textSize="18sp"
-            android:layout_marginTop="12dp" />
-
-        <Button
-            android:id="@+id/btnStartHumanPerformance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Movement Test"
-            android:layout_marginTop="24dp" />
-
-        <Button
-            android:id="@+id/btnStopHumanPerformance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stop Movement Test"
-            android:layout_marginTop="12dp" />
-
-        <Button
-            android:id="@+id/btnResetHumanPerformance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reset Test"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvHumanPerformanceResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Result will appear here."
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp" />
-
-        <Button
+        <ImageButton
             android:id="@+id/btnBackFromHumanPerformance"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            app:tint="#1B5E20" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:layout_marginTop="24dp" />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvHumanPerformanceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Human Performance Lab"
+                android:textColor="#1B5E20"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
 
-</ScrollView>
+            <TextView
+                android:id="@+id/tvHumanPerformanceInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hold the phone firmly and perform a controlled stretch or movement. Lower movement change means smoother and more graceful movement."
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp" />
+
+            <EditText
+                android:id="@+id/etMovementNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Movement notes, e.g. slow arm raise, side stretch"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+
+            <TextView
+                android:id="@+id/tvCurrentMovement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Movement: 0.00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tvPeakMovement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peak Movement: 0.00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvSmoothness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smoothness: Not measured"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvElapsedMovementTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Elapsed Time: 0.0 seconds"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnStartHumanPerformance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Movement Test"
+                android:layout_marginTop="24dp" />
+
+            <Button
+                android:id="@+id/btnStopHumanPerformance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Movement Test"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnResetHumanPerformance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset Test"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvHumanPerformanceResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Result will appear here."
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -7,6 +7,7 @@ import android.hardware.SensorManager
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +40,7 @@ class EarthquakeActivity : AppCompatActivity(), SensorEventListener {
         val btnStartEarthquakeTest = findViewById<Button>(R.id.btnStartEarthquakeTest)
         val btnStopEarthquakeTest = findViewById<Button>(R.id.btnStopEarthquakeTest)
         val btnResetEarthquakeTest = findViewById<Button>(R.id.btnResetEarthquakeTest)
-        val btnBackFromEarthquake = findViewById<Button>(R.id.btnBackFromEarthquake)
+        val btnBackFromEarthquake = findViewById<ImageButton>(R.id.btnBackFromEarthquake)
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)

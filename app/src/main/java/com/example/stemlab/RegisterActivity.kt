@@ -28,25 +28,25 @@ class RegisterActivity : AppCompatActivity() {
             val password = etRegisterPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password.", Toast.LENGTH_SHORT).show()
+                ToastHelper.showCustomToast(this, "Please enter email and password.")
                 return@setOnClickListener
             }
 
             if (password.length < 6) {
-                Toast.makeText(this, "Password must be at least 6 characters.", Toast.LENGTH_SHORT).show()
+                ToastHelper.showCustomToast(this, "Password must be at least 6 characters.")
                 return@setOnClickListener
             }
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Account created successfully.", Toast.LENGTH_SHORT).show()
+                    ToastHelper.showCustomToast(this, "Account created successfully.")
 
                     val intent = Intent(this, TeamSetupActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
                 .addOnFailureListener { exception ->
-                    Toast.makeText(this, "Register failed: ${exception.message}", Toast.LENGTH_LONG).show()
+                    ToastHelper.showCustomToast(this, "Register failed: ${exception.message}")
                 }
         }
 

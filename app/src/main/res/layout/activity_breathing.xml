@@ -1,120 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#FFFFFF">
 
-    <LinearLayout
+    <!-- Top Navigation Bar -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="#E8F5E9"
+        android:padding="4dp">
 
-        <TextView
-            android:id="@+id/tvBreathingTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Breathing Pace Trainer"
-            android:textColor="#1B5E20"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:id="@+id/tvBreathingInstruction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Place the phone gently on the chest or hold it firmly near the body. Start the test and breathe normally. The app estimates breathing pace using movement changes."
-            android:textSize="16sp"
-            android:layout_marginBottom="20dp" />
-
-        <EditText
-            android:id="@+id/etBreathingNotes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Test notes, e.g. breathing at rest / after exercise"
-            android:inputType="textMultiLine"
-            android:minLines="2" />
-
-        <TextView
-            android:id="@+id/tvChestMovement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chest Movement: 0.00"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
-
-        <TextView
-            android:id="@+id/tvDetectedBreaths"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Detected Breaths: 0"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvBreathingElapsedTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Elapsed Time: 0.0 seconds"
-            android:textSize="18sp"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvBreathsPerMinute"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Breaths Per Minute: 0.0"
-            android:textSize="18sp"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvBreathingCategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Category: Not measured"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp" />
-
-        <Button
-            android:id="@+id/btnStartBreathingTest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start Breathing Test"
-            android:layout_marginTop="24dp" />
-
-        <Button
-            android:id="@+id/btnStopBreathingTest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stop Breathing Test"
-            android:layout_marginTop="12dp" />
-
-        <Button
-            android:id="@+id/btnResetBreathingTest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reset Test"
-            android:layout_marginTop="12dp" />
-
-        <TextView
-            android:id="@+id/tvBreathingResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Result will appear here."
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp" />
-
-        <Button
+        <ImageButton
             android:id="@+id/btnBackFromBreathing"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            app:tint="#1B5E20" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:layout_marginTop="24dp" />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvBreathingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Breathing Pace Trainer"
+                android:textColor="#1B5E20"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
 
-</ScrollView>
+            <TextView
+                android:id="@+id/tvBreathingInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Place the phone gently on the chest or hold it firmly near the body. Start the test and breathe normally. The app estimates breathing pace using movement changes."
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp" />
+
+            <EditText
+                android:id="@+id/etBreathingNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Test notes, e.g. breathing at rest / after exercise"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+
+            <TextView
+                android:id="@+id/tvChestMovement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chest Movement: 0.00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tvDetectedBreaths"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detected Breaths: 0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvBreathingElapsedTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Elapsed Time: 0.0 seconds"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvBreathsPerMinute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Breaths Per Minute: 0.0"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvBreathingCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category: Not measured"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnStartBreathingTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Breathing Test"
+                android:layout_marginTop="24dp" />
+
+            <Button
+                android:id="@+id/btnStopBreathingTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Breathing Test"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnResetBreathingTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset Test"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvBreathingResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Result will appear here."
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

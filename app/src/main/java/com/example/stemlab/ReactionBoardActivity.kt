@@ -53,7 +53,7 @@ class ReactionBoardActivity : AppCompatActivity() {
 
         val btnStartReactionRound = findViewById<Button>(R.id.btnStartReactionRound)
         val btnResetReaction = findViewById<Button>(R.id.btnResetReaction)
-        val btnBackFromReaction = findViewById<Button>(R.id.btnBackFromReaction)
+        val btnBackFromReaction = findViewById<android.widget.ImageButton>(R.id.btnBackFromReaction)
 
         btnStartReactionRound.setOnClickListener {
             startReactionRound()

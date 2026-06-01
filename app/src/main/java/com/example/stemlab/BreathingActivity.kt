@@ -53,7 +53,7 @@ class BreathingActivity : AppCompatActivity(), SensorEventListener {
         val btnStartBreathingTest = findViewById<Button>(R.id.btnStartBreathingTest)
         val btnStopBreathingTest = findViewById<Button>(R.id.btnStopBreathingTest)
         val btnResetBreathingTest = findViewById<Button>(R.id.btnResetBreathingTest)
-        val btnBackFromBreathing = findViewById<Button>(R.id.btnBackFromBreathing)
+        val btnBackFromBreathing = findViewById<android.widget.ImageButton>(R.id.btnBackFromBreathing)
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)

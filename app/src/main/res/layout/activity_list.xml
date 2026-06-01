@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#1B5E20"
+            app:cardBackgroundColor="#E8F5E9">
+
+            <TextView
+                android:id="@+id/tvWelcomeTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Welcome, Team"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1B5E20"
+                android:gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:layout_width="match_parent"
@@ -74,12 +99,22 @@
             android:text="Breathing Pace Trainer"
             android:layout_marginTop="12dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLeaderboard"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Leaderboard"
-            android:layout_marginTop="24dp" />
+            android:layout_height="64dp"
+            android:text="View Global Leaderboard"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            app:icon="@drawable/ic_leaderboard"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            app:iconTint="#1B5E20"
+            app:cornerRadius="12dp" />
     </LinearLayout>
 
 </ScrollView>
