@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import utils.UIHelper
 import kotlin.math.sqrt
 
 class SensorActivity : AppCompatActivity(), SensorEventListener {

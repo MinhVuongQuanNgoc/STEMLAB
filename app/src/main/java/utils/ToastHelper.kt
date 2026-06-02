@@ -1,9 +1,10 @@
-package com.example.stemlab
+package utils
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
+import com.example.stemlab.R
 
 object ToastHelper {
     fun showCustomToast(context: Context, message: String) {

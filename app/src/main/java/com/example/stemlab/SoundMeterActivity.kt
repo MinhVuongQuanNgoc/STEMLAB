@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import utils.UIHelper
 import kotlin.math.log10
 
 class SoundMeterActivity : AppCompatActivity() {

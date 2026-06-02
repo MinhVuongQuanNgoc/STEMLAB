@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import utils.UIHelper
 import kotlin.random.Random
 
 class TeamSetupActivity : AppCompatActivity() {
@@ -35,6 +36,12 @@ class TeamSetupActivity : AppCompatActivity() {
 
             if (teamName.isEmpty() || memberOne.isEmpty() || gradeLevel.isEmpty()) {
                 UIHelper.showNotification(it, "Please enter team name, member name, and grade level.")
+                return@setOnClickListener
+            }
+
+            val grade = gradeLevel.toIntOrNull()
+            if (grade == null || grade !in 1..12) {
+                UIHelper.showNotification(it, "Invalid grade level. Please enter between grade 1 and 12.")
                 return@setOnClickListener
             }
 
