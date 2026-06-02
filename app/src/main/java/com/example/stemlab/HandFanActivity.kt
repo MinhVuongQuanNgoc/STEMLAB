@@ -32,7 +32,7 @@ class HandFanActivity : AppCompatActivity() {
             val angleText = etBendAngle.text.toString().trim()
 
             if (distanceText.isEmpty() || angleText.isEmpty()) {
-                ToastHelper.showCustomToast(this, "Please enter distance and bend angle.")
+                UIHelper.showNotification(it, "Please enter distance and bend angle.")
                 return@setOnClickListener
             }
 
@@ -40,7 +40,7 @@ class HandFanActivity : AppCompatActivity() {
             val angleDegrees = angleText.toDoubleOrNull()
 
             if (distance == null || angleDegrees == null) {
-                ToastHelper.showCustomToast(this, "Please enter valid numbers.")
+                UIHelper.showNotification(it, "Please enter valid numbers.")
                 return@setOnClickListener
             }
 

@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.abs
 import kotlin.math.sqrt
@@ -59,7 +58,7 @@ class BreathingActivity : AppCompatActivity(), SensorEventListener {
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
         if (accelerometer == null) {
-            Toast.makeText(this, "Accelerometer sensor not available.", Toast.LENGTH_LONG).show()
+            UIHelper.showNotification(btnStartBreathingTest, "Accelerometer sensor not available.")
         }
 
         btnStartBreathingTest.setOnClickListener {
@@ -67,7 +66,7 @@ class BreathingActivity : AppCompatActivity(), SensorEventListener {
             isTesting = true
             startTime = System.currentTimeMillis()
             tvBreathingResult.text = "Breathing test started. Breathe normally and keep the phone steady."
-            Toast.makeText(this, "Breathing test started.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(it, "Breathing test started.")
         }
 
         btnStopBreathingTest.setOnClickListener {
@@ -152,7 +151,7 @@ class BreathingActivity : AppCompatActivity(), SensorEventListener {
 
     private fun stopAndShowResult() {
         if (!isTesting) {
-            Toast.makeText(this, "No active breathing test.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(findViewById(R.id.btnStopBreathingTest), "No active breathing test.")
             return
         }
 
@@ -182,7 +181,7 @@ class BreathingActivity : AppCompatActivity(), SensorEventListener {
             breathsPerMinute
         )
 
-        Toast.makeText(this, "Breathing test stopped.", Toast.LENGTH_SHORT).show()
+        UIHelper.showNotification(findViewById(R.id.btnStopBreathingTest), "Breathing test stopped.")
     }
 
     private fun resetBreathingData() {

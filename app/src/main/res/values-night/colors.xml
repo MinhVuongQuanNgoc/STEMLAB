@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Semantic Colors - Dark Mode -->
+    <color name="app_background">#121212</color>
+    <color name="top_bar_background">#1B5E20</color>
+    <color name="top_bar_content">#FFFFFF</color> <!-- Pure white for maximum visibility -->
+    <color name="text_main">#FFFFFF</color>
+    <color name="text_sub">#B0B0B0</color>
+    <color name="text_highlight">#A5D6A7</color> <!-- Light Green for highlights in Dark Mode -->
+    <color name="card_bg">#1E1E1E</color>
+    <color name="divider">#333333</color>
+</resources>

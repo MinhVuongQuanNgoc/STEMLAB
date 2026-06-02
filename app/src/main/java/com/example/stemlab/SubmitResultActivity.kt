@@ -117,7 +117,7 @@ class SubmitResultActivity : AppCompatActivity() {
             val rating = ratingBar.rating.toInt()
 
             if (prediction.isEmpty() || result.isEmpty() || reflection.isEmpty()) {
-                Toast.makeText(this, "Please complete all fields.", Toast.LENGTH_SHORT).show()
+                UIHelper.showNotification(it, "Please complete all fields.")
                 return@setOnClickListener
             }
 
@@ -196,13 +196,13 @@ class SubmitResultActivity : AppCompatActivity() {
             firestore.collection("results")
                 .add(resultData)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Result saved to Firestore.", Toast.LENGTH_SHORT).show()
+                    UIHelper.showNotification(btnSubmitResult, "Result saved to Firestore.")
                 }
                 .addOnFailureListener { exception ->
-                    Toast.makeText(this, "Firestore save failed: ${exception.message}", Toast.LENGTH_LONG).show()
+                    UIHelper.showNotification(btnSubmitResult, "Firestore save failed: ${exception.message}")
                 }
 
-            Toast.makeText(this, "Result saved to history.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(btnSubmitResult, "Result saved to history.")
         }
 
         btnViewHistory.setOnClickListener {
@@ -227,13 +227,13 @@ class SubmitResultActivity : AppCompatActivity() {
                     Longitude: $longitude
                 """.trimIndent()
 
-                Toast.makeText(this, "Location recorded.", Toast.LENGTH_SHORT).show()
+                UIHelper.showNotification(tvLocation, "Location recorded.")
             } else {
                 tvLocation.text = "Location: Not available. Set emulator location and try again."
-                Toast.makeText(this, "Location not available yet.", Toast.LENGTH_SHORT).show()
+                UIHelper.showNotification(tvLocation, "Location not available yet.")
             }
         }.addOnFailureListener { exception ->
-            Toast.makeText(this, "Location failed: ${exception.message}", Toast.LENGTH_LONG).show()
+            UIHelper.showNotification(tvLocation, "Location failed: ${exception.message}")
         }
     }
 
@@ -251,7 +251,7 @@ class SubmitResultActivity : AppCompatActivity() {
         ) {
             getCurrentLocation()
         } else {
-            Toast.makeText(this, "Location permission denied.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(findViewById(android.R.id.content), "Location permission denied.")
         }
     }
 

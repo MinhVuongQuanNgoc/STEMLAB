@@ -15,7 +15,7 @@
         android:padding="4dp">
 
         <ImageButton
-            android:id="@+id/btnBackFromSoundMeter"
+            android:id="@+id/btnBackFromSettings"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Sound Meter"
+            android:text="Settings"
             android:textColor="@color/top_bar_content"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -37,8 +37,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,75 +46,91 @@
             android:padding="24dp">
 
             <TextView
-                android:id="@+id/tvSoundTitle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sound Pollution Hunter"
-                android:textColor="@color/text_highlight"
-                android:textSize="28sp"
+                android:text="Team Information"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@color/text_highlight"
                 android:layout_marginBottom="16dp" />
-
-            <TextView
-                android:id="@+id/tvSoundInstruction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Use this tool to compare classroom sound levels. The dB value is an estimated relative reading."
-                android:textColor="@color/text_main"
-                android:textSize="16sp"
-                android:layout_marginBottom="24dp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
+                app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/card_bg">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="24dp"
-                    android:gravity="center">
+                    android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/tvSoundLevel"
+                        android:id="@+id/tvSettingsTeamName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0 dB"
-                        android:textColor="@color/text_highlight"
-                        android:textSize="48sp"
-                        android:textStyle="bold" />
+                        android:text="Team: [Name]"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_main"
+                        android:layout_marginBottom="8dp" />
 
                     <TextView
-                        android:id="@+id/tvSoundCategory"
+                        android:id="@+id/tvSettingsMemberOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Category: Not measured"
-                        android:textColor="@color/text_sub"
-                        android:textSize="18sp"
-                        android:layout_marginTop="8dp" />
+                        android:text="Member 1: [Name]"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_main"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvSettingsMemberTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Member 2: [Name]"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_main"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvSettingsGrade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grade Level: [Level]"
+                        android:textColor="@color/text_main"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <Button
-                android:id="@+id/btnStartSoundMeter"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preferences"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_highlight"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchDarkMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Start Measuring" />
+                android:text="Dark Mode"
+                android:textColor="@color/text_main"
+                android:textSize="16sp"
+                android:layout_marginBottom="32dp" />
 
             <Button
-                android:id="@+id/btnStopSoundMeter"
+                android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Stop Measuring"
+                android:text="Logout"
                 style="@style/Widget.Material3.Button.TonalButton"
-                android:layout_marginTop="12dp" />
+                android:textColor="#D32F2F" />
 
         </LinearLayout>
-
     </ScrollView>
-
 </LinearLayout>

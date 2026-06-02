@@ -34,7 +34,7 @@ class TeamSetupActivity : AppCompatActivity() {
             val gradeLevel = etGradeLevel.text.toString().trim()
 
             if (teamName.isEmpty() || memberOne.isEmpty() || gradeLevel.isEmpty()) {
-                Toast.makeText(this, "Please enter team name, member name, and grade level.", Toast.LENGTH_SHORT).show()
+                UIHelper.showNotification(it, "Please enter team name, member name, and grade level.")
                 return@setOnClickListener
             }
 
@@ -53,6 +53,9 @@ class TeamSetupActivity : AppCompatActivity() {
             val teamPreferences = getSharedPreferences("STEMM_TEAM", MODE_PRIVATE)
             teamPreferences.edit()
                 .putString("teamName", teamName)
+                .putString("memberOne", memberOne)
+                .putString("memberTwo", memberTwo)
+                .putString("gradeLevel", gradeLevel)
                 .apply()
 
             val intent = Intent(this, ActivityListActivity::class.java)

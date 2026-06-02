@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="#FFFFFF">
+    android:background="@color/app_background">
 
     <!-- Top Navigation Bar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E8F5E9"
+        android:background="@color/top_bar_background"
         android:padding="4dp">
 
         <ImageButton
@@ -23,8 +23,16 @@
             android:padding="12dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"
-            app:tint="#1B5E20" />
+            app:tint="@color/top_bar_content" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Breathing Pace"
+            android:textColor="@color/top_bar_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <ScrollView
@@ -43,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Breathing Pace Trainer"
-                android:textColor="#1B5E20"
+                android:textColor="@color/text_highlight"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp" />
@@ -53,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Place the phone gently on the chest or hold it firmly near the body. Start the test and breathe normally. The app estimates breathing pace using movement changes."
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:layout_marginBottom="20dp" />
 
@@ -61,32 +70,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Test notes, e.g. breathing at rest / after exercise"
+                android:textColor="@color/text_main"
+                android:textColorHint="@color/text_sub"
                 android:inputType="textMultiLine"
                 android:minLines="2" />
 
-            <TextView
-                android:id="@+id/tvChestMovement"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chest Movement: 0.00"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_bg">
 
-            <TextView
-                android:id="@+id/tvDetectedBreaths"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Detected Breaths: 0"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvChestMovement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Chest Movement: 0.00"
+                        android:textColor="@color/text_main"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDetectedBreaths"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Detected Breaths: 0"
+                        android:textColor="@color/text_main"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/tvBreathingElapsedTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Elapsed Time: 0.0 seconds"
+                android:textColor="@color/text_main"
                 android:textSize="18sp"
                 android:layout_marginTop="12dp" />
 
@@ -95,6 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Breaths Per Minute: 0.0"
+                android:textColor="@color/text_main"
                 android:textSize="18sp"
                 android:layout_marginTop="12dp" />
 
@@ -103,6 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Category: Not measured"
+                android:textColor="@color/text_highlight"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="12dp" />
@@ -119,6 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Stop Breathing Test"
+                style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_marginTop="12dp" />
 
             <Button
@@ -126,6 +159,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Reset Test"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_marginTop="12dp" />
 
             <TextView
@@ -133,6 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Result will appear here."
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="24dp" />

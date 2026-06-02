@@ -46,14 +46,14 @@ class EarthquakeActivity : AppCompatActivity(), SensorEventListener {
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
         if (accelerometer == null) {
-            Toast.makeText(this, "Accelerometer sensor not available.", Toast.LENGTH_LONG).show()
+            UIHelper.showNotification(btnStartEarthquakeTest, "Accelerometer sensor not available.")
         }
 
         btnStartEarthquakeTest.setOnClickListener {
             peakMovement = 0.0
             isTesting = true
             tvEarthquakeResult.text = "Testing started. Gently shake the structure."
-            Toast.makeText(this, "Vibration test started.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(it, "Vibration test started.")
         }
 
         btnStopEarthquakeTest.setOnClickListener {
@@ -72,7 +72,7 @@ class EarthquakeActivity : AppCompatActivity(), SensorEventListener {
                 Lower peak movement means the structure reduced vibration more effectively.
             """.trimIndent().format(peakMovement)
 
-            Toast.makeText(this, "Vibration test stopped.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(it, "Vibration test stopped.")
         }
 
         btnResetEarthquakeTest.setOnClickListener {

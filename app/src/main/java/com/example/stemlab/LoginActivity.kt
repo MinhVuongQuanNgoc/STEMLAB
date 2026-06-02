@@ -33,20 +33,20 @@ class LoginActivity : AppCompatActivity() {
             val password = etLoginPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                ToastHelper.showCustomToast(this, "Please enter email and password.")
+                UIHelper.showNotification(it, "Please enter email and password.")
                 return@setOnClickListener
             }
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
-                    ToastHelper.showCustomToast(this, "Login successful.")
+                    UIHelper.showNotification(findViewById(android.R.id.content), "Login successful.")
 
                     val intent = Intent(this, TeamSetupActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
                 .addOnFailureListener { exception ->
-                    ToastHelper.showCustomToast(this, "Login failed: ${exception.message}")
+                    UIHelper.showNotification(findViewById(android.R.id.content), "Login failed: ${exception.message}")
                 }
         }
 

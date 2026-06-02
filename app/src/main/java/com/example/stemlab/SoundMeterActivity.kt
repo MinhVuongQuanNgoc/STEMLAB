@@ -104,15 +104,11 @@ class SoundMeterActivity : AppCompatActivity() {
             }
 
             isMeasuring = true
-            ToastHelper.showCustomToast(this, "Sound measuring started.")
+            UIHelper.showNotification(findViewById(android.R.id.content), "Sound measuring started.")
             handler.post(soundRunnable)
 
         } catch (exception: Exception) {
-            Toast.makeText(
-                this,
-                "Could not start sound meter: ${exception.message}",
-                Toast.LENGTH_LONG
-            ).show()
+            UIHelper.showNotification(findViewById(android.R.id.content), "Could not start sound meter: ${exception.message}")
             stopMeasuring()
         }
     }
@@ -154,7 +150,7 @@ class SoundMeterActivity : AppCompatActivity() {
         mediaRecorder?.release()
         mediaRecorder = null
 
-        ToastHelper.showCustomToast(this, "Sound measuring stopped.")
+        UIHelper.showNotification(findViewById(android.R.id.content), "Sound measuring stopped.")
     }
 
     override fun onRequestPermissionsResult(
@@ -171,7 +167,7 @@ class SoundMeterActivity : AppCompatActivity() {
         ) {
             startMeasuring()
         } else {
-            Toast.makeText(this, "Microphone permission denied.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(findViewById(android.R.id.content), "Microphone permission denied.")
         }
     }
 

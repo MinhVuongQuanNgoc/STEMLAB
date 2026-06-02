@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="#FFFFFF">
+    android:background="@color/app_background">
 
     <!-- Top Navigation Bar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E8F5E9"
+        android:background="@color/top_bar_background"
         android:padding="4dp">
 
         <ImageButton
@@ -23,7 +23,16 @@
             android:padding="12dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"
-            app:tint="#1B5E20" />
+            app:tint="@color/top_bar_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Submit Result"
+            android:textColor="@color/top_bar_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
@@ -45,7 +54,7 @@
                 android:text="Submit Result"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:textColor="#1B5E20"
+                android:textColor="@color/text_highlight"
                 android:layout_marginBottom="20dp" />
 
             <EditText
@@ -53,6 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Prediction"
+                android:textColor="@color/text_main"
+                android:textColorHint="@color/text_sub"
                 android:inputType="textMultiLine"
                 android:minLines="2" />
 
@@ -61,6 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Result / Measurement"
+                android:textColor="@color/text_main"
+                android:textColorHint="@color/text_sub"
                 android:inputType="textMultiLine"
                 android:minLines="2"
                 android:layout_marginTop="12dp" />
@@ -70,6 +83,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Reflection / What did you learn?"
+                android:textColor="@color/text_main"
+                android:textColorHint="@color/text_sub"
                 android:inputType="textMultiLine"
                 android:minLines="3"
                 android:layout_marginTop="12dp" />
@@ -80,6 +95,8 @@
                 android:layout_height="wrap_content"
                 android:numStars="5"
                 android:stepSize="1"
+                android:progressTint="@color/text_highlight"
+                android:progressBackgroundTint="@color/text_sub"
                 android:layout_marginTop="16dp" />
 
             <TextView
@@ -87,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Timer: 0.0 seconds"
+                android:textColor="@color/text_main"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="20dp" />
@@ -117,6 +135,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Location: Not recorded"
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:layout_marginTop="12dp" />
 
@@ -132,6 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:textColor="@color/text_highlight"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="24dp" />

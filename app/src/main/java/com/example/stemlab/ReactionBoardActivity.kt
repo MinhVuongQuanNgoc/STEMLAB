@@ -74,7 +74,7 @@ class ReactionBoardActivity : AppCompatActivity() {
 
     private fun startReactionRound() {
         if (roundActive) {
-            Toast.makeText(this, "Round already running.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(btnReactionTarget, "Round already running.")
             return
         }
 
@@ -103,7 +103,7 @@ class ReactionBoardActivity : AppCompatActivity() {
             btnReactionTarget.text = "TOO EARLY"
             btnReactionTarget.isEnabled = false
             tvReactionStatus.text = "Too early! Press Start Round to try again."
-            Toast.makeText(this, "Too early!", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(btnReactionTarget, "Too early!")
             return
         }
 

@@ -53,7 +53,7 @@ class HumanPerformanceActivity : AppCompatActivity(), SensorEventListener {
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
         if (accelerometer == null) {
-            Toast.makeText(this, "Accelerometer sensor not available.", Toast.LENGTH_LONG).show()
+            UIHelper.showNotification(findViewById(android.R.id.content), "Accelerometer sensor not available.")
         }
 
         btnStartHumanPerformance.setOnClickListener {
@@ -61,7 +61,7 @@ class HumanPerformanceActivity : AppCompatActivity(), SensorEventListener {
             startTime = System.currentTimeMillis()
             isTesting = true
             tvHumanPerformanceResult.text = "Movement test started. Perform a controlled stretch."
-            Toast.makeText(this, "Movement test started.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(it, "Movement test started.")
         }
 
         btnStopHumanPerformance.setOnClickListener {
@@ -133,7 +133,7 @@ class HumanPerformanceActivity : AppCompatActivity(), SensorEventListener {
 
     private fun stopAndShowResult() {
         if (!isTesting) {
-            Toast.makeText(this, "No active movement test.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(findViewById(android.R.id.content), "No active movement test.")
             return
         }
 
@@ -177,7 +177,7 @@ class HumanPerformanceActivity : AppCompatActivity(), SensorEventListener {
             averageChange
         )
 
-        Toast.makeText(this, "Movement test stopped.", Toast.LENGTH_SHORT).show()
+        UIHelper.showNotification(findViewById(android.R.id.content), "Movement test stopped.")
     }
 
     private fun resetTestData() {

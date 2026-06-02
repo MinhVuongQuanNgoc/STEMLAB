@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="#FFFFFF">
+    android:background="@color/app_background">
 
     <!-- Top Navigation Bar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E8F5E9"
+        android:background="@color/top_bar_background"
         android:padding="4dp">
 
         <ImageButton
@@ -23,8 +23,17 @@
             android:padding="12dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"
-            app:tint="#1B5E20" />
+            app:tint="@color/top_bar_content" />
 
+        <TextView
+            android:id="@+id/tvTitleBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Challenge"
+            android:textColor="@color/top_bar_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <ScrollView
@@ -45,7 +54,7 @@
                 android:text="Challenge Title"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:textColor="#1B5E20"
+                android:textColor="@color/text_highlight"
                 android:layout_marginBottom="12dp" />
 
             <TextView
@@ -55,7 +64,7 @@
                 android:text="Category"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#555555"
+                android:textColor="@color/text_sub"
                 android:layout_marginBottom="20dp" />
 
             <TextView
@@ -63,6 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Overview"
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:lineSpacingExtra="4dp"
                 android:layout_marginBottom="20dp" />
@@ -72,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Instructions"
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:lineSpacingExtra="4dp"
                 android:layout_marginBottom="24dp" />

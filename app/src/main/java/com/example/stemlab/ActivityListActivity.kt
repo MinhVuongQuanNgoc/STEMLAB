@@ -26,9 +26,15 @@ class ActivityListActivity : AppCompatActivity() {
         setupButton(R.id.btnBreathing, "Breathing Pace Trainer")
 
         val btnLeaderboard = findViewById<Button>(R.id.btnLeaderboard)
+        val btnSettings = findViewById<android.widget.ImageButton>(R.id.btnSettings)
 
         btnLeaderboard.setOnClickListener {
             val intent = Intent(this, LeaderboardActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnSettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
     }

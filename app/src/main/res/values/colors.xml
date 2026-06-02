@@ -5,7 +5,14 @@
     <color name="primary">#2E7D32</color>
     <color name="primary_dark">#1B5E20</color>
     <color name="accent">#81C784</color>
-    <color name="background">#F5F5F5</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#757575</color>
+
+    <!-- Semantic Colors - Light Mode -->
+    <color name="app_background">#F5F5F5</color>
+    <color name="top_bar_background">#C8E6C9</color>
+    <color name="top_bar_content">#1B5E20</color>
+    <color name="text_main">#212121</color>
+    <color name="text_sub">#757575</color>
+    <color name="text_highlight">#1B5E20</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="divider">#E0E0E0</color>
 </resources>

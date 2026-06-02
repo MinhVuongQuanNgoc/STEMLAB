@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="#FFFFFF">
+    android:background="@color/app_background">
 
     <!-- Top Navigation Bar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E8F5E9"
+        android:background="@color/top_bar_background"
         android:padding="4dp">
 
         <ImageButton
@@ -23,8 +23,16 @@
             android:padding="12dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"
-            app:tint="#1B5E20" />
+            app:tint="@color/top_bar_content" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Reaction Board"
+            android:textColor="@color/top_bar_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <ScrollView
@@ -43,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Reaction Board Challenge"
-                android:textColor="#1B5E20"
+                android:textColor="@color/text_highlight"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp" />
@@ -53,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tap the target as soon as it appears. Do not tap too early. Repeat attempts to compare reaction speed."
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:layout_marginBottom="20dp" />
 
@@ -61,6 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Attempt notes, e.g. dominant hand / non-dominant hand"
+                android:textColor="@color/text_main"
+                android:textColorHint="@color/text_sub"
                 android:inputType="text" />
 
             <TextView
@@ -68,6 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Press Start Round to begin."
+                android:textColor="@color/text_main"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginTop="20dp"
@@ -87,6 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Last Reaction Time: Not measured"
+                android:textColor="@color/text_main"
                 android:textSize="18sp"
                 android:layout_marginBottom="10dp" />
 
@@ -95,6 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Attempts: 0"
+                android:textColor="@color/text_main"
                 android:textSize="18sp"
                 android:layout_marginBottom="10dp" />
 
@@ -103,6 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rating: Not measured"
+                android:textColor="@color/text_highlight"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="24dp" />

@@ -43,7 +43,7 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
         if (accelerometer == null) {
-            Toast.makeText(this, "Accelerometer sensor not available.", Toast.LENGTH_SHORT).show()
+            UIHelper.showNotification(findViewById(android.R.id.content), "Accelerometer sensor not available.")
         }
     }
 
