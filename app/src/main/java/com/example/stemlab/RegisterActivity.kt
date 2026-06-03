@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import utils.TextModerator
 import utils.UIHelper
 
 class RegisterActivity : AppCompatActivity() {
@@ -30,6 +31,11 @@ class RegisterActivity : AppCompatActivity() {
 
             if (email.isEmpty() || password.isEmpty()) {
                 UIHelper.showNotification(it, "Please enter email and password.")
+                return@setOnClickListener
+            }
+
+            if (TextModerator.hasProfanity(email)) {
+                UIHelper.showNotification(it, "Inappropriate email address detected.")
                 return@setOnClickListener
             }
 

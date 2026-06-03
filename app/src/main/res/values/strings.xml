@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">STEM LAB</string>
+    <string name="title_stem_lab">STEM LAB</string>
+    <string name="subtitle_main">Real-World STEMM Games</string>
+    <string name="btn_start">Start</string>
+    <string name="cd_main_title">STEM LAB Application Title</string>
+
+    <!-- Login/Register -->
+    <string name="login_title">Login or Sign up</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_create_account">Create New Account</string>
+    <string name="btn_back">Back</string>
+    <string name="register_title">Create Account</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_back_to_login">Back to Login</string>
+
+    <!-- Team Setup -->
+    <string name="team_setup_title">Create Your Team</string>
+    <string name="hint_team_name">Team Name</string>
+    <string name="hint_member_one">Member 1 First Name</string>
+    <string name="hint_member_two">Member 2 First Name</string>
+    <string name="hint_grade_level">Grade / Year Level</string>
+    <string name="btn_create_team">Create Team</string>
+
+    <!-- Activity List -->
+    <string name="welcome_team">Welcome, %1$s</string>
+    <string name="stemm_activities_title">STEMM Activities</string>
+    <string name="choose_challenge_subtitle">Choose a real-world STEMM challenge to begin.</string>
+    <string name="btn_parachute">Parachute Drop Challenge</string>
+    <string name="btn_sound">Sound Pollution Hunter</string>
+    <string name="btn_fan">Hand Fan Challenge</string>
+    <string name="btn_earthquake">Earthquake-Resistant Structure</string>
+    <string name="btn_performance">Human Performance Lab</string>
+    <string name="btn_reaction">Reaction Board Challenge</string>
+    <string name="btn_breathing">Breathing Pace Trainer</string>
+    <string name="btn_view_leaderboard">View Global Leaderboard</string>
+    <string name="cd_settings">Settings</string>
+
+    <!-- Common -->
+    <string name="cd_back">Back</string>
 </resources>

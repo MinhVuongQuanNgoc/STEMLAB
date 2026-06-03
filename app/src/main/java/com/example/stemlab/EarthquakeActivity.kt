@@ -11,6 +11,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import utils.TextModerator
 import utils.UIHelper
 import kotlin.math.sqrt
 
@@ -61,6 +62,10 @@ class EarthquakeActivity : AppCompatActivity(), SensorEventListener {
             isTesting = false
 
             val design = etStructureDesign.text.toString().trim()
+            if (TextModerator.hasProfanity(design)) {
+                UIHelper.showNotification(it, "Inappropriate language detected in design.")
+                return@setOnClickListener
+            }
             val rating = getStabilityRating(peakMovement)
 
             tvEarthquakeResult.text = """

@@ -21,6 +21,7 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import utils.TextModerator
 import utils.UIHelper
 
 class SubmitResultActivity : AppCompatActivity() {
@@ -119,6 +120,13 @@ class SubmitResultActivity : AppCompatActivity() {
 
             if (prediction.isEmpty() || result.isEmpty() || reflection.isEmpty()) {
                 UIHelper.showNotification(it, "Please complete all fields.")
+                return@setOnClickListener
+            }
+
+            if (TextModerator.hasProfanity(prediction) || 
+                TextModerator.hasProfanity(result) || 
+                TextModerator.hasProfanity(reflection)) {
+                UIHelper.showNotification(it, "Inappropriate language detected. Please check your entries.")
                 return@setOnClickListener
             }
 

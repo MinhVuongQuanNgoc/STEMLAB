@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import utils.TextModerator
 import utils.UIHelper
 import kotlin.random.Random
 
@@ -42,6 +43,13 @@ class TeamSetupActivity : AppCompatActivity() {
             val grade = gradeLevel.toIntOrNull()
             if (grade == null || grade !in 1..12) {
                 UIHelper.showNotification(it, "Invalid grade level. Please enter between grade 1 and 12.")
+                return@setOnClickListener
+            }
+
+            if (TextModerator.hasProfanity(teamName) || 
+                TextModerator.hasProfanity(memberOne) || 
+                TextModerator.hasProfanity(memberTwo)) {
+                UIHelper.showNotification(it, "Inappropriate language detected. Please check your entries.")
                 return@setOnClickListener
             }
 

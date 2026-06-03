@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import utils.TextModerator
 import utils.UIHelper
 import kotlin.math.abs
 import kotlin.math.sqrt
@@ -159,6 +160,10 @@ class BreathingActivity : AppCompatActivity(), SensorEventListener {
         isTesting = false
 
         val notes = etBreathingNotes.text.toString().trim()
+        if (TextModerator.hasProfanity(notes)) {
+            UIHelper.showNotification(findViewById(R.id.btnStopBreathingTest), "Inappropriate language detected in notes.")
+            return
+        }
         val elapsedSeconds = (System.currentTimeMillis() - startTime) / 1000.0
         val breathsPerMinute = if (elapsedSeconds > 0) {
             breathCount / elapsedSeconds * 60.0

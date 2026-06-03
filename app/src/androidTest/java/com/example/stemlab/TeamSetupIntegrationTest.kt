@@ -32,12 +32,13 @@ class TeamSetupIntegrationTest {
             .perform(typeText("Ben"), closeSoftKeyboard())
 
         onView(withId(R.id.etGradeLevel))
-            .perform(typeText("Year 7"), closeSoftKeyboard())
+            .perform(typeText("7"), closeSoftKeyboard())
 
         onView(withId(R.id.btnCreateTeam))
             .perform(click())
 
-        onView(withText("STEMM Activities"))
+        // Verify we are on the Activity List screen by checking the title
+        onView(withText(R.string.stemm_activities_title))
             .check(matches(isDisplayed()))
     }
 }

@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import utils.TextModerator
 import utils.UIHelper
 import kotlin.math.abs
 import kotlin.math.sqrt
@@ -141,6 +142,10 @@ class HumanPerformanceActivity : AppCompatActivity(), SensorEventListener {
         isTesting = false
 
         val notes = etMovementNotes.text.toString().trim()
+        if (TextModerator.hasProfanity(notes)) {
+            UIHelper.showNotification(findViewById(android.R.id.content), "Inappropriate language detected in notes.")
+            return
+        }
         val elapsedSeconds = (System.currentTimeMillis() - startTime) / 1000.0
 
         val averageMovement = if (movementSamples.isNotEmpty()) {

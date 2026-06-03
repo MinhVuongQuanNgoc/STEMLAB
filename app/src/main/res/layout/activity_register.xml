@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Account"
+            android:text="@string/register_title"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@color/text_highlight"
@@ -24,7 +24,7 @@
             android:id="@+id/etRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/hint_email"
             android:textColor="@color/text_main"
             android:textColorHint="@color/text_sub"
             android:inputType="textEmailAddress" />
@@ -33,7 +33,7 @@
             android:id="@+id/etRegisterPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/hint_password"
             android:textColor="@color/text_main"
             android:textColorHint="@color/text_sub"
             android:inputType="textPassword"
@@ -43,7 +43,7 @@
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="@string/btn_register"
             android:layout_marginTop="24dp" />
 
         <Button
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Back to Login" />
+            android:text="@string/btn_back_to_login" />
 
     </LinearLayout>
 

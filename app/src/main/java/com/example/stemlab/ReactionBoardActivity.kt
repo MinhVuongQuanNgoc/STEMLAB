@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import utils.TextModerator
 import utils.UIHelper
 import kotlin.random.Random
 
@@ -125,6 +126,7 @@ class ReactionBoardActivity : AppCompatActivity() {
         val rating = getReactionRating(lastReactionTime)
 
         val notes = etReactionNotes.text.toString().trim()
+        val sanitizedNotes = TextModerator.sanitize(notes)
 
         tvReactionStatus.text = "Round completed."
         tvReactionTime.text = "Last Reaction Time: ${lastReactionTime} ms"
@@ -132,7 +134,7 @@ class ReactionBoardActivity : AppCompatActivity() {
             Attempts: ${reactionTimes.size}
             Best Time: $bestTime ms
             Average Time: %.1f ms
-            Notes: ${if (notes.isEmpty()) "Not recorded" else notes}
+            Notes: ${if (sanitizedNotes.isEmpty()) "Not recorded" else sanitizedNotes}
         """.trimIndent().format(averageTime)
 
         tvReactionRating.text = "Rating: $rating"

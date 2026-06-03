@@ -4,6 +4,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,19 +20,19 @@ class EndToEndFlowTest {
 
     @Test
     fun activityList_toChallengeDetail_toSubmitResult_flowWorks() {
-        onView(withText("Parachute Drop Challenge"))
+        onView(withId(R.id.btnParachute))
             .perform(click())
 
-        onView(withText("Parachute Drop Challenge"))
-            .check(matches(isDisplayed()))
+        onView(withId(R.id.tvChallengeTitle))
+            .check(matches(withText(R.string.btn_parachute)))
 
-        onView(withText("Engineering + Physics"))
-            .check(matches(isDisplayed()))
+        onView(withId(R.id.tvChallengeCategory))
+            .check(matches(withText("Engineering + Physics")))
 
-        onView(withText("Start Challenge"))
+        onView(withId(R.id.btnStartChallenge))
             .perform(click())
 
-        onView(withText("Submit Result: Parachute Drop Challenge"))
-            .check(matches(isDisplayed()))
+        onView(withId(R.id.tvSubmitTitle))
+            .check(matches(withText("Submit Result: Parachute Drop Challenge")))
     }
 }

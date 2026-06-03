@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login or Sign up"
+            android:text="@string/login_title"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@color/text_highlight"
@@ -24,7 +24,7 @@
             android:id="@+id/etLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/hint_email"
             android:textColor="@color/text_main"
             android:textColorHint="@color/text_sub"
             android:inputType="textEmailAddress" />
@@ -33,7 +33,7 @@
             android:id="@+id/etLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/hint_password"
             android:textColor="@color/text_main"
             android:textColorHint="@color/text_sub"
             android:inputType="textPassword"
@@ -43,14 +43,14 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/btn_login"
             android:layout_marginTop="24dp" />
 
         <Button
             android:id="@+id/btnGoRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create New Account"
+            android:text="@string/btn_create_account"
             android:layout_marginTop="12dp" />
 
         <Button
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Back" />
+            android:text="@string/btn_back" />
 
     </LinearLayout>
 

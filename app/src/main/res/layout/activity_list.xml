@@ -29,7 +29,7 @@
             android:layout_height="48dp"
             android:layout_gravity="end"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Settings"
+            android:contentDescription="@string/cd_settings"
             android:padding="12dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_settings"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="16dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Welcome, Team"
+                    android:text="@string/welcome_team"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/text_highlight"
@@ -72,7 +72,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="STEMM Activities"
+                android:text="@string/stemm_activities_title"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_highlight"
@@ -81,7 +81,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Choose a real-world STEMM challenge to begin."
+                android:text="@string/choose_challenge_subtitle"
                 android:textSize="16sp"
                 android:textColor="@color/text_sub"
                 android:layout_marginBottom="24dp" />
@@ -90,48 +90,48 @@
                 android:id="@+id/btnParachute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Parachute Drop Challenge" />
+                android:text="@string/btn_parachute" />
 
             <Button
                 android:id="@+id/btnSound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sound Pollution Hunter"
+                android:text="@string/btn_sound"
                 android:layout_marginTop="12dp" />
 
             <Button
                 android:id="@+id/btnFan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hand Fan Challenge"
+                android:text="@string/btn_fan"
                 android:layout_marginTop="12dp" />
 
             <Button
                 android:id="@+id/btnEarthquake"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Earthquake-Resistant Structure"
+                android:text="@string/btn_earthquake"
                 android:layout_marginTop="12dp" />
 
             <Button
                 android:id="@+id/btnPerformance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Human Performance Lab"
+                android:text="@string/btn_performance"
                 android:layout_marginTop="12dp" />
 
             <Button
                 android:id="@+id/btnReaction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reaction Board Challenge"
+                android:text="@string/btn_reaction"
                 android:layout_marginTop="12dp" />
 
             <Button
                 android:id="@+id/btnBreathing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Breathing Pace Trainer"
+                android:text="@string/btn_breathing"
                 android:layout_marginTop="12dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -139,7 +139,7 @@
                 style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
-                android:text="View Global Leaderboard"
+                android:text="@string/btn_view_leaderboard"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="16dp"
                 app:icon="@drawable/ic_leaderboard"
